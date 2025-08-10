@@ -61,7 +61,7 @@ export class IdleState implements IState<[]> {
 	}
 
 	exit(): void {
-		print(`Exiting ${this.getName()}`);
+		// print(`Exiting ${this.getName()}`);
 		// Clean up idle state
 	}
 }

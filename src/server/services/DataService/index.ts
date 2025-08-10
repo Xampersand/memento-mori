@@ -33,6 +33,9 @@ export class DataService implements OnInit {
 				this.profiles.set(player, profile);
 				print(`Profile loaded for ${player.Name}`);
 				Events.dataUpdate(player, profile.Data);
+				task.delay(2, () => {
+					Events.dataUpdate(player, profile.Data);
+				})
 			} else profile.EndSession();
 		} else player.Kick(`Profile load fail - Please rejoin`);
 	}

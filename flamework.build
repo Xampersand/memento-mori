@@ -21,7 +21,8 @@
 		"memento-mori:out/client/controllers/StateController/IdleState@IdleState": "client/controllers/StateController/IdleState@IdleState",
 		"memento-mori:out/client/controllers/StateController/WalkState@WalkState": "client/controllers/StateController/WalkState@WalkState",
 		"memento-mori:out/client/controllers/StateController/CombatState@CombatState": "client/controllers/StateController/CombatState@CombatState",
-		"memento-mori:out/client/controllers/DebugController@DebugController": "client/controllers/DebugController@DebugController"
+		"memento-mori:out/client/controllers/DebugController@DebugController": "client/controllers/DebugController@DebugController",
+		"memento-mori:out/client/controllers/UIController@UIController": "client/controllers/UIController@UIController"
 	},
 	"metadata": {}
 }

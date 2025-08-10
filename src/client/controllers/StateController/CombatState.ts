@@ -17,7 +17,7 @@ export class CombatState implements IState<[string]> {
 	}
 
 	enter(lastState: IState<any> | undefined, animationId: string): void {
-		print(`Entering ${this.getName()} from ${lastState?.getName() ?? "initial state"} with animation: ${animationId}`);
+		// print(`Entering ${this.getName()} from ${lastState?.getName() ?? "initial state"} with animation: ${animationId}`);
 		this.animationId = animationId;
 		this.combatTimer = 0;
 		
@@ -59,7 +59,7 @@ export class CombatState implements IState<[string]> {
 	}
 
 	exit(): void {
-		print(`Exiting ${this.getName()}`);
+		// print(`Exiting ${this.getName()}`);
 		// TODO: Stop combat animation
 		// TODO: Clean up combat effects
 		// TODO: Reset combat variables

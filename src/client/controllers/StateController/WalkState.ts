@@ -49,7 +49,7 @@ export class WalkState implements IState<[]> {
 	}
 
 	exit(): void {
-		print(`Exiting ${this.getName()}`);
+		// print(`Exiting ${this.getName()}`);
 		this.isMoving = false;
 		// TODO: Stop walking animation
 	}

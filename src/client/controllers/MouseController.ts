@@ -1,18 +1,25 @@
 import { Controller, OnInit } from "@flamework/core";
-import { Players } from "@rbxts/services";
+import { Players, UserInputService } from "@rbxts/services";
+
+export namespace Mouse {
+	export enum Icon {
+		Default,
+		Select
+	}
+}
 
 @Controller()
 export class MouseController implements OnInit{
 	_cursorIcons = {
-		default: "rbxassetid://109797705071552",
-		select: "rbxassetid://80092144949645"
+		[Mouse.Icon.Default]: "rbxassetid://109797705071552",
+		[Mouse.Icon.Select]: "rbxassetid://80092144949645"
 	}
 
 	_cursorIconObject: ImageLabel | undefined;
 
-	public changeMouseIcon(icon: string) {
-		if (this._cursorIconObject) {
-			this._cursorIconObject.Image = icon;
+	public changeMouseIcon(icon: Mouse.Icon) {
+		if (this._cursorIconObject && this._cursorIconObject.Image !== this._cursorIcons[icon]) {
+			this._cursorIconObject.Image = this._cursorIcons[icon];
 		}
 	}
 
@@ -25,8 +32,14 @@ export class MouseController implements OnInit{
 	onInit() {
 		const playerGui: PlayerGui = Players.LocalPlayer.WaitForChild("PlayerGui") as PlayerGui;
 		const mouseUI = playerGui.WaitForChild("MouseUI") as ScreenGui | undefined;
-		const mouseIcon = mouseUI?.WaitForChild("Mouse") as ImageLabel | undefined;
+		const mouseIcon = mouseUI?.WaitForChild("Mouse")! as ImageLabel;
+
+		UserInputService.MouseIconEnabled = false;
 
 		this._cursorIconObject = mouseIcon;
+
+		print(this._cursorIconObject)
+
+		this.changeMouseIcon(Mouse.Icon.Default);
 	}
 }
