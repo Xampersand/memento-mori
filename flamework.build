@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"flameworkVersion": "1.3.1",
+	"identifiers": {
+		"memento-mori:out/server/services/TestService@TestService": "server/services/TestService@TestService",
+		"memento-mori:out/client/controllers/TestController@TestController": "client/controllers/TestController@TestController",
+		"memento-mori:out/server/services/DataService.ts/init@DataService": "server/services/DataService.ts/init@DataService",
+		"memento-mori:out/server/services/ProgressionService@TestService": "server/services/ProgressionService@TestService",
+		"memento-mori:out/server/services/ProgressionService@ProgressionService": "server/services/ProgressionService@ProgressionService",
+		"memento-mori:out/server/services/EquipmentService@EquipmentService": "server/services/EquipmentService@EquipmentService",
+		"memento-mori:out/shared/networking@GlobalEvents": "shared/networking@GlobalEvents",
+		"memento-mori:out/server/services/CombatService@CombatService": "server/services/CombatService@CombatService",
+		"memento-mori:out/server/services/ItemService.ts/init@ItemService": "server/services/ItemService.ts/init@ItemService"
+	},
+	"metadata": {}
+}
