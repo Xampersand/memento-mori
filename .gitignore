@@ -1,6 +1,4 @@
-# Project place file
-/Memento Mori.rbxlx
-
-# Roblox Studio lock files
-/*.rbxlx.lock
-/*.rbxl.lock
+/node_modules
+/out
+/include
+*.tsbuildinfo
