@@ -1,7 +1,7 @@
 import { OnStart, Service } from "@flamework/core";
 import { Items } from "./Items";
 import { Item, PlayerData } from "shared/types";
-import { DataService } from "../DataService.ts";
+import { DataService } from "../DataService";
 import Object from "@rbxts/object-utils";
 import { Players } from "@rbxts/services";
 

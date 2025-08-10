@@ -1,8 +1,8 @@
 import { Service, OnStart } from "@flamework/core";
-import { DataService } from "./DataService.ts";
+import { DataService } from "./DataService/index.js";
 import { ProgressionService } from "./ProgressionService";
 import { Events } from "server/networking.js";
-import DataTemplate from "./DataService.ts/DataTemplate.js";
+import DataTemplate from "./DataService/DataTemplate.js";
 
 @Service()
 export class CombatService implements OnStart {

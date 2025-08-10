@@ -1,5 +1,5 @@
 import { Service, OnStart } from "@flamework/core";
-import { DataService } from "./DataService.ts";
+import { DataService } from "./DataService/index.js";
 import type { Item } from "shared/types.ts";
 import { Players, ServerStorage } from "@rbxts/services";
 

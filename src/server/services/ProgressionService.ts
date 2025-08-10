@@ -1,5 +1,5 @@
 import { Service, OnStart } from "@flamework/core";
-import { DataService } from "./DataService.ts";
+import { DataService } from "./DataService/index.js";
 
 @Service({})
 export class ProgressionService {

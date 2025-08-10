@@ -10,7 +10,18 @@
 		"memento-mori:out/server/services/EquipmentService@EquipmentService": "server/services/EquipmentService@EquipmentService",
 		"memento-mori:out/shared/networking@GlobalEvents": "shared/networking@GlobalEvents",
 		"memento-mori:out/server/services/CombatService@CombatService": "server/services/CombatService@CombatService",
-		"memento-mori:out/server/services/ItemService.ts/init@ItemService": "server/services/ItemService.ts/init@ItemService"
+		"memento-mori:out/server/services/ItemService.ts/init@ItemService": "server/services/ItemService.ts/init@ItemService",
+		"memento-mori:out/client/controllers/CameraController.ts/init@CameraController": "client/controllers/CameraController.ts/init@CameraController",
+		"memento-mori:out/client/controllers/CameraController/init@CameraController": "client/controllers/CameraController/init@CameraController",
+		"memento-mori:out/server/services/DataService/init@DataService": "server/services/DataService/init@DataService",
+		"memento-mori:out/server/services/ItemService/init@ItemService": "server/services/ItemService/init@ItemService",
+		"memento-mori:out/client/controllers/DataController@DataController": "client/controllers/DataController@DataController",
+		"memento-mori:out/client/controllers/MouseController@MouseController": "client/controllers/MouseController@MouseController",
+		"memento-mori:out/client/controllers/StateController/init@StateController": "client/controllers/StateController/init@StateController",
+		"memento-mori:out/client/controllers/StateController/IdleState@IdleState": "client/controllers/StateController/IdleState@IdleState",
+		"memento-mori:out/client/controllers/StateController/WalkState@WalkState": "client/controllers/StateController/WalkState@WalkState",
+		"memento-mori:out/client/controllers/StateController/CombatState@CombatState": "client/controllers/StateController/CombatState@CombatState",
+		"memento-mori:out/client/controllers/DebugController@DebugController": "client/controllers/DebugController@DebugController"
 	},
 	"metadata": {}
 }
