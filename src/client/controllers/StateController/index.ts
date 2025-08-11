@@ -6,6 +6,7 @@ import { CombatState } from "./CombatState";
 import Object from "@rbxts/object-utils";
 import { DataController } from "../DataController";
 import { RunService, UserInputService } from "@rbxts/services";
+import { AnimationController } from "../AnimationController";
 
 /**
  * StateController manages game state transitions and handles input/updates
@@ -16,7 +17,7 @@ export class StateController implements OnInit, OnTick{
 	private currentState: IState<any> | undefined;
 	private readonly states: Record<string, IState<any>> = {};
 
-	constructor(private dataController: DataController) {}
+	constructor(private dataController: DataController, private animationController: AnimationController) {}
 
 	onInit(): void {
 		// Initialize all available states
@@ -38,9 +39,9 @@ export class StateController implements OnInit, OnTick{
 	 * Initialize all available state instances
 	 */
 	private initializeStates(): void {
-		const idleState = new IdleState(this, this.dataController);
-		const walkState = new WalkState(this);
-		const combatState = new CombatState(this);
+		const idleState = new IdleState(this, this.dataController, this.animationController);
+		const walkState = new WalkState(this, this.animationController);
+		const combatState = new CombatState(this, this.animationController);
 
 		this.states[idleState.getName().lower()] = idleState;
 		this.states[walkState.getName().lower()] = walkState;

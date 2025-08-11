@@ -1,6 +1,7 @@
 import { Players } from "@rbxts/services";
 import { StateController } from ".";
 import { DataController } from "../DataController";
+import { AnimationController } from "../AnimationController";
 import { IState } from "./IState";
 import { Item } from "shared/types";
 
@@ -9,7 +10,7 @@ import { Item } from "shared/types";
  * Takes no arguments when entering
  */
 export class IdleState implements IState<[]> {
-	constructor(private stateController: StateController, private dataController: DataController) {}
+	constructor(private stateController: StateController, private dataController: DataController, private animationController: AnimationController) {}
 
 	private humanoid: Humanoid | undefined;
 
@@ -22,6 +23,7 @@ export class IdleState implements IState<[]> {
 		// TODO: Set idle animation
 		// TODO: Reset movement variables
 		this.humanoid = Players.LocalPlayer.Character?.FindFirstChild("Humanoid") as Humanoid;
+		this.animationController.play("tarnishedIdle", {});
 	}
 
 	input(inputObject: InputObject): void {
@@ -63,5 +65,6 @@ export class IdleState implements IState<[]> {
 	exit(): void {
 		// print(`Exiting ${this.getName()}`);
 		// Clean up idle state
+		this.animationController.stop("tarnishedIdle");
 	}
 }

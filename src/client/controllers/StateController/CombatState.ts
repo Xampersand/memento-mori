@@ -1,12 +1,13 @@
 import { StateController } from ".";
 import { IState } from "./IState";
+import { AnimationController } from "../AnimationController";
 
 /**
  * CombatState - Player is in combat
  * Takes an animation id string when entering
  */
 export class CombatState implements IState<[string]> {
-	constructor(private stateController: StateController) {}
+	constructor(private stateController: StateController, private animationController: AnimationController) {}
 
 	private animationId: string = "";
 	private combatTimer = 0;
@@ -22,6 +23,14 @@ export class CombatState implements IState<[string]> {
 		this.combatTimer = 0;
 		
 		// TODO: Play combat animation using the provided animationId
+		this.animationController.play(this.animationId, {
+			HitStart: () => {
+				print("hit start");
+			},
+			HitEnd: () => {
+				print("hit end");
+			}
+		});
 		// TODO: Initialize combat variables
 		// TODO: Set up combat effects
 	}

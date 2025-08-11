@@ -1,13 +1,14 @@
 import { Players } from "@rbxts/services";
 import { StateController } from ".";
 import { IState } from "./IState";
+import { AnimationController } from "../AnimationController";
 
 /**
  * WalkState - Player is walking/moving
  * Takes no arguments when entering
  */
 export class WalkState implements IState<[]> {
-	constructor(private stateController: StateController) {}
+	constructor(private stateController: StateController, private animationController: AnimationController) {}
 
 	private isMoving = false;
 	private humanoid: Humanoid | undefined;
@@ -20,6 +21,7 @@ export class WalkState implements IState<[]> {
 		// print(`Entering ${this.getName()} from ${lastState?.getName() ?? "initial state"}`);
 		this.isMoving = true;
 		this.humanoid = Players.LocalPlayer.Character?.FindFirstChild("Humanoid") as Humanoid;
+		this.animationController.play("walk", {});
 	}
 
 	input(inputObject: InputObject): void {
@@ -51,7 +53,7 @@ export class WalkState implements IState<[]> {
 	exit(): void {
 		// print(`Exiting ${this.getName()}`);
 		this.isMoving = false;
-		// TODO: Stop walking animation
+		this.animationController.stop("walk");
 	}
 
 	private checkForMovementEnd(): void {
