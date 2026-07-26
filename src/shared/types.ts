@@ -60,7 +60,6 @@ export namespace Item {
         description: string;
     };
 
-    // Add other item types as needed...
     export type ArmorData = {
         type: Type.Armor;
         id: string;
